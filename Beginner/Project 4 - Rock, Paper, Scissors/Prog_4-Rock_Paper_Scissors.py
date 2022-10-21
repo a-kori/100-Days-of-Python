@@ -4,7 +4,10 @@ import random
 print("Welcome to the Rock-Paper-Scissors game!")
 rock_paper_scissors = [ascii_pictures.rock, ascii_pictures.paper, ascii_pictures.scissors]
 
-player_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors: "))
+while(True) :
+    player_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors: "))
+    if player_choice >= 0 and player_choice <= 2 : break
+    else : print("Incorrect input! Try again.")
 print(rock_paper_scissors[player_choice])
 
 computer_choice = random.randint(0, 2)
