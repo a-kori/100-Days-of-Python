@@ -11,11 +11,11 @@ while(True) :
     else : print("Apparently, you chose an inapplicable number of characters at some point. Please, try again.")
 
 password = []
-for i in range(0, letters_count) :
+for i in range(letters_count) :
     password += random.choice(characters.letters)
-for i in range(0, numbers_count) :
+for i in range(numbers_count) :
     password += random.choice(characters.numbers)
-for i in range(0, symbols_count) :
+for i in range(symbols_count) :
     password += random.choice(characters.symbols)
 
 random.shuffle(password)
