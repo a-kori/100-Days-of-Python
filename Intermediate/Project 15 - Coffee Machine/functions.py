@@ -47,6 +47,7 @@ def print_report():
 
 def refill_machine():
     '''Sets the resources of the machine to their initial values and displays a confirmation message.'''
+    global machine
     machine[RESOURCES] =  data.resources.copy()
 
     clear()
