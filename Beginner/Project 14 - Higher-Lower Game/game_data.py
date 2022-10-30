@@ -1,6 +1,6 @@
 '''Contains data on people and objects that are compared in the game, as well as the record of the current high score.'''
-
-HIGH_SCORE_RECORD_PATH = "Project 14 - Higher-Lower Game\high_score_record.txt"
+import os
+HIGH_SCORE_RECORD_PATH = os.path.dirname(os.path.abspath(__file__)) + "\high_score_record.txt"
 
 def get_high_score():
     '''Returns the current high score of the game from the high score record file.'''
