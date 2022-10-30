@@ -50,7 +50,12 @@ def game_loop(data : list, compare_a : dict, score = 0) -> int:
     print("\nB: " + data_to_str(compare_b))
 
     # Ask for user's guess and evaluate it
-    guess = input("\nType A or B: ").lower()
+    while True:
+        guess = input("\nType A or B: ").lower()
+        if guess == "a" or guess == "b":
+            break
+        else:
+            print("Invalid input. Try again!")
 
     clear()
     print(ascii_art.game_logo)
