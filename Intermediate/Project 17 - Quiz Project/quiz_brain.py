@@ -3,7 +3,7 @@ import view
 
 class QuizBrain:
 
-    def __init__(self, question_list) -> None:
+    def __init__(self, question_list : list) -> None:
         '''Initializes a new QuizBrain object.'''
         self.score = 0
         self.question_number = 0
@@ -31,7 +31,7 @@ class QuizBrain:
     def next_question(self):
         '''Displays the next question and evaluates the user's answer to it.'''
 
-        if self.question_number == len(self.question_list):
+        if not self.any_questions_left():
             raise Exception(f"There are no questions left in the question list!")
 
         current_question = self.question_list[self.question_number]
