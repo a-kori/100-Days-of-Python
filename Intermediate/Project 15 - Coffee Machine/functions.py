@@ -101,8 +101,7 @@ def process_coins(drink : dict) -> float:
         "dimes" : 0.10,
         "nickels" : 0.05,
         "pennies" : 0.01
-    }
-    amount = 0
+    } 
 
     while True:
         clear()
@@ -111,6 +110,7 @@ def process_coins(drink : dict) -> float:
         print("The price of your " + drink["name"] + f" will be ${cost:.2f}.")
         print("Please, inserts coins here.\n")
 
+        amount = 0
         try:
             for type in coin_types:
                 coins = int(input(f"Enter the number of {type}: "))
