@@ -11,7 +11,7 @@ money_m = MoneyMachine()
 menu = Menu()
 
 def print_error_message(error : str, wait_time = 3):
-    '''Informs the user about an invalid input on the console. The message is displayed for 3 seconds.'''
+    '''Informs the user about an error. The message is displayed for wait_time seconds (or 3 by default).'''
 
     clear()
     print(ascii_art.coffee_logo)
