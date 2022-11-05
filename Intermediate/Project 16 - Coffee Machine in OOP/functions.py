@@ -70,6 +70,8 @@ def make_choice() -> MenuItem:
             refill_machine()
         elif choice == "report":
             print_report()
+        elif choice == "":
+            continue
         else:
             result = menu.find_drink(choice)
             if result != None:
