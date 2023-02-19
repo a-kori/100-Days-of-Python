@@ -3,12 +3,14 @@ import random
 from turtle import Turtle, Screen
 
 def square_challenge(tim: Turtle):
+    '''Draws a square with the edge size of 100.'''
     for _ in range(4):
         tim.right(90)
         tim.forward(100)
 
 
 def dashed_line_challenge(tim: Turtle):
+    '''Draws a dashed line with a dash/gap size of 10.'''
     for _ in range(15):
         tim.pendown()
         tim.forward(10)
@@ -17,6 +19,7 @@ def dashed_line_challenge(tim: Turtle):
 
 
 def shapes_challenge(tim: Turtle):
+    '''Draws an equilateral triangle, a square, an equilateral pentagon, hexagon, heptagon, octagon, nonagon and decagon, changing the color for each shape.'''
     egdes_count = 3
     for _ in range(7):
         tim.color((random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
@@ -27,6 +30,7 @@ def shapes_challenge(tim: Turtle):
 
 
 def random_walk_challenge(tim: Turtle):
+    '''Draws a random walk with a thick brush, changing the color on each step.'''
     tim.speed("normal")
     tim.pensize(15)
 
@@ -37,6 +41,7 @@ def random_walk_challenge(tim: Turtle):
 
 
 def spirograph_challenge(tim: Turtle):
+    '''Draws a spirograph with a different color for each circle.'''
     tim.speed("fastest")
     degree = 0
     while(degree < 360):
@@ -47,6 +52,7 @@ def spirograph_challenge(tim: Turtle):
 
 
 def perform_challenges():
+    '''Performs all the 5 challenges from the lesson with a pause of 1 second between each one.'''
     screen = Screen()
     screen.colormode(255)
 
