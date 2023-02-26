@@ -12,6 +12,15 @@ screen.tracer(0)
 # Creating the snake
 snake = Snake()
 
+# Binding arrow keys to control commands
+screen.listen()
+screen.onkey(key="Up", fun=snake.up)
+screen.onkey(key="Down", fun=snake.down)
+screen.onkey(key="Right", fun=snake.right)
+screen.onkey(key="Left", fun=snake.left)
+
+# Letting the snake loose until 
+# it hits a wall or its own tail
 game_on = True
 while(game_on):    
     screen.update()
