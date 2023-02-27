@@ -6,15 +6,13 @@ LEFT = 180
 DOWN = 270
 
 class Snake:
+    '''A class describing the snake's control and appearance in the Snake Game.'''
+
     def __init__(self) -> None:
-        '''Creates a new snake's body (initially consisting of 3 squares).'''
+        '''Creates a new snake's body (initially consisting of 3 20x20 squares).'''
         self.snake = []
         for i in range(3):
-            body_block = Turtle("square")
-            body_block.color("white")
-            body_block.penup()
-            body_block.setposition(-20*i, 0)
-            self.snake.append(body_block)
+            self.add_segment((-20*i, 0))
         self.head = self.snake[0]
     
     def move(self) -> None:
@@ -24,6 +22,18 @@ class Snake:
             self.snake[block_num].setposition(new_pos)
         self.head.forward(MOVE_DISTANCE)
     
+    def add_segment(self, position) -> None:
+        '''Adds a new segment to the snake at a given position.'''
+        segment = Turtle("square")
+        segment.color("white")
+        segment.penup()
+        segment.setposition(position)
+        self.snake.append(segment)
+
+    def extend(self) -> None:
+        '''Extends the snake by one segment.'''
+        self.add_segment(self.snake[-1].position())
+
     def right(self) -> None: 
         '''Turns the snake's heading to the East, if it's not facing West.'''
         if self.head.heading() != LEFT:
