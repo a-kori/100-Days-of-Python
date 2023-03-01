@@ -32,21 +32,25 @@ screen.onkey(key="Down", fun=right_paddle.move_down)
 
 # Let the ball lose with a gradually increasing speed.
 # If it 'flew out of the screen', increment the oponent's score
-start_sleep = 0.005
+start_sleep = 0.015
 while(True):
-    ball.move((left_paddle, right_paddle))
+    if left_score.score == 11 or right_score.score == 11:
+        left_score.end_game()
+        break
+    else:
+        ball.move((left_paddle, right_paddle))
     
     if ball.xcor() > 410:
         ball = Ball()
-        ball.x_increment = -1
+        ball.x_increment = -3
         left_score.increase()
     
     if ball.xcor() < -410:
         ball = Ball()
-        ball.x_increment = 1
+        ball.x_increment = 3
         right_score.increase()
 
     screen.update()
-    time.sleep(start_sleep / ball.move_speed)
+    time.sleep(start_sleep * 0.8**ball.move_speed)
 
 screen.exitonclick()

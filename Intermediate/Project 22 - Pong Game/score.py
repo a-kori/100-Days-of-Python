@@ -25,4 +25,4 @@ class Score(Turtle):
     def end_game(self) -> None:
         '''Displays the 'Game over' sign in the center of the screen.'''
         self.setposition(0, 0)
-        self.write(f"GAME OVER", align="center", font=('Consolas', 12, 'normal'))
+        self.write(f"GAME OVER", align="center", font=('Courier', 50, 'normal'))

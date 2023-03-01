@@ -11,10 +11,10 @@ class Ball(Turtle):
         self.shape("circle")
         self.color("white")
         self.penup()
-        self.move_speed = 1
+        self.move_speed = 0
 
-        self.x_increment = random.choice([-1, 1])
-        self.y_increment = random.choice([-1, 1])
+        self.x_increment = random.choice([-3, 3])
+        self.y_increment = random.choice([-3, 3])
 
 
     def move(self, paddles) -> None:
@@ -36,17 +36,17 @@ class Ball(Turtle):
     def paddle_edge_hit(self, paddle: Paddle) -> bool:
         '''Checks if a paddle was hit on the edge.'''
         if paddle.xcor() > 0:
-            if self.xcor() > paddle.xcor() - 9:
-                if self.ycor() >= paddle.ycor() - 60 and self.ycor() <= paddle.ycor() - 59:
+            if self.xcor() > paddle.xcor() - 7:
+                if self.ycor() >= paddle.ycor() - 60 and self.ycor() <= paddle.ycor() - 57:
                     return True
-                if self.ycor() <= paddle.ycor() + 60 and self.ycor() >= paddle.ycor() + 59:
+                if self.ycor() <= paddle.ycor() + 60 and self.ycor() >= paddle.ycor() + 57:
                     return True
             return False
         else:
-            if self.xcor() < paddle.xcor() + 9:
-                if self.ycor() >= paddle.ycor() - 60 and self.ycor() <= paddle.ycor() - 59:
+            if self.xcor() < paddle.xcor() + 7:
+                if self.ycor() >= paddle.ycor() - 60 and self.ycor() <= paddle.ycor() - 57:
                     return True
-                if self.ycor() <= paddle.ycor() + 60 and self.ycor() >= paddle.ycor() + 59:
+                if self.ycor() <= paddle.ycor() + 60 and self.ycor() >= paddle.ycor() + 57:
                     return True
             return False
 
@@ -54,10 +54,10 @@ class Ball(Turtle):
     def paddle_hit(self, paddle: Paddle) -> bool:
         '''Checks if a paddle was hit on the front.'''
         if paddle.xcor() > 0:
-            if self.xcor() >= paddle.xcor() - 10 and self.xcor() <= paddle.xcor() - 9:
-                return self.ycor() >= paddle.ycor() - 61 and self.ycor() <= paddle.ycor() + 61
+            if self.xcor() >= paddle.xcor() - 10 and self.xcor() <= paddle.xcor() - 7:
+                return self.ycor() >= paddle.ycor() - 63 and self.ycor() <= paddle.ycor() + 63
             return False
         else:
-            if self.xcor() <= paddle.xcor() + 10 and self.xcor() >= paddle.xcor() + 9:
-                return self.ycor() >= paddle.ycor() - 61 and self.ycor() <= paddle.ycor() + 61
+            if self.xcor() <= paddle.xcor() + 10 and self.xcor() >= paddle.xcor() + 7:
+                return self.ycor() >= paddle.ycor() - 63 and self.ycor() <= paddle.ycor() + 63
             return False
