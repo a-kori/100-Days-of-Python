@@ -1,3 +1,4 @@
+'''Another Pandas challenge from Day 25 of 100 Days of Code.'''
 import os
 import pandas
 PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
