@@ -32,13 +32,10 @@ class Scoreboard(Turtle):
 
     def get_high_score(self) -> int:
         '''Returns the current high score of the game.'''
-        file = open(HIGH_SCORE_PATH, 'r')
-        high_score = int(file.readline())
-        file.close()
-        return high_score
+        with open(HIGH_SCORE_PATH, 'r') as file:
+            return int(file.readline())
 
     def update_high_score(self, new_high_score : int) -> None:
         '''Overwrites the current high score of the game.'''
-        file = open(HIGH_SCORE_PATH, 'w')
-        file.write(str(new_high_score))
-        file.close()
+        with open(HIGH_SCORE_PATH, 'w') as file:
+            file.write(str(new_high_score))
