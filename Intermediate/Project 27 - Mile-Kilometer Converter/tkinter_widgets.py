@@ -14,6 +14,7 @@ label.pack()
 
 # Button (calls action() when pressed)
 def action():
+    '''Prints "Do something" on button click.'''
     print("Do something")
 
 button = Button(text="Click Me", command=action)
